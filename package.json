@@ -2,9 +2,9 @@
 	"name": "at-lab-homework",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": ".mocharc.js",
 	"scripts": {
-		"test:unit-testing": "mocha ",
+		"test:unit-testing": "mocha",
 		"test:wdio-jasmine-task": "mocha",
 		"test:wdio-mocha-task": "mocha"
 	},
@@ -20,7 +20,7 @@
 	},
 	"homepage": "https://github.com/DarkZefir/at-lab-homework#readme",
 	"dependencies": {
-		"chai": "^4.3.5",
+		"chai": "^4.3.6",
 		"mocha": "^9.2.0"
 	}
 }
