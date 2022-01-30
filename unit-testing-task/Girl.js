@@ -28,6 +28,8 @@ class Girl {
     this._boyFriend = boyFriend;
   }
 
+  //need remove '!' in EXCELLENT, GOOD mod - isPretty not a function and isBoyfriendRich(),
+  // in NEUTRAL need '!' and need fix isSlimFriendBecameFat.
   getMood() {
     if (!this.isBoyFriendWillBuyNewShoes()) {
       return 'EXCELLENT';
@@ -40,23 +42,27 @@ class Girl {
     }
   }
 
+  // need fix isBoyfriendRich and need return
   spendBoyFriendMoney(amountForSpending) {
     if (this.isBoyfriendRich()) {
       this.boyFriend.spendSomeMoney(amountForSpending);
     }
   }
 
+  // need delete '!'
   isBoyfriendRich() {
     return !this.boyFriend?.isRich();
   }
 
+  // need fix isBoyfriendRich
   isBoyFriendWillBuyNewShoes() {
     return this.isBoyfriendRich() && this.isPretty;
   }
 
+  // isSlimFriendGotAFewKilos not a function and don't need '!'
   isSlimFriendBecameFat() {
     return this.isSlimFriendGotAFewKilos() && !this.isPretty;
   }
 }
 
-module.exports = {Girl};
+module.exports = { Girl };

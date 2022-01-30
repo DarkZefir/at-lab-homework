@@ -28,6 +28,7 @@ class Boy {
     this._girlFriend = girlFriend;
   }
 
+  //this method don't return EXCELLENT and GOOD. Need fix isSummerMonth and change place neutral block
   getMood() {
     if (this.isRich() && this.isPrettyGirlFriend() && this.isSummerMonth()) {
       return 'EXCELLENT';
@@ -40,6 +41,7 @@ class Boy {
     }
   }
 
+  //this.wealth is not a function
   spendSomeMoney(amountForSpending) {
     if (amountForSpending <= this.wealth()) {
       this.wealth += amountForSpending;
@@ -48,6 +50,7 @@ class Boy {
     }
   }
 
+  //don't work. return false, but need true. Need add to all .toUpperCase and need all || 
   isSummerMonth() {
     return this.birthdayMonth.toLowerCase() === 'JUNE' || this.birthdayMonth.toUpperCase() === 'JULY' && this.birthdayMonth.toUpperCase() === 'AUGUST';
   }
