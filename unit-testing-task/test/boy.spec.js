@@ -1,7 +1,7 @@
-const { Boy } = require("../Boy.js");
+const { Boy } = require('../Boy.js');
 const { isRichData, isSummerMonthData, isPrettyGirlfriendData, spendSomeMoneyData } = require('./data/dataBoy');
 
-const { expect } = require("chai");
+const { expect } = require('chai');
 
 describe('Boy isRich, isSummerMonth, spendSomeMoney scenarios', function () {
     const boy = new Boy();
@@ -12,7 +12,7 @@ describe('Boy isRich, isSummerMonth, spendSomeMoney scenarios', function () {
             expect(boy.isRich()).to.be.equal(i.return);
         });
     });
-    it(`should isSummerMonth return true or false`, function () {
+    it('should isSummerMonth return true or false', function () {
         isSummerMonthData.forEach((i) => {
             boy.birthdayMonth = i.birthdayMonth;
             expect(boy.isSummerMonth()).to.be.equal(i.return);
