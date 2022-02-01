@@ -1,6 +1,5 @@
 const { Girl } = require('../Girl');
-const { Boy } = require("../Boy.js");
-const { richBoy, poorBoy } = require('./basePage/basePageGirl');
+const { richBoy, poorBoy } = require('./data/dataGirl');
 
 const { expect } = require('chai');
 

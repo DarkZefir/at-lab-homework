@@ -1,5 +1,5 @@
 const { Boy } = require("../Boy.js");
-const { isRichBase, isSummerMonthBase, isPrettyGirlFriendBase, spendSomeMoneyBase } = require('./basePage/basePageBoy');
+const { isRichData, isSummerMonthData, isPrettyGirlfriendData, spendSomeMoneyData } = require('./data/dataBoy');
 
 const { expect } = require("chai");
 
@@ -7,25 +7,25 @@ describe('Boy isRich, isSummerMonth, spendSomeMoney scenarios', function () {
     const boy = new Boy();
 
     it('should isRich return true or false', function () {
-        isRichBase.forEach((i) => {
+        isRichData.forEach((i) => {
             boy.wealth = i.wealth;
             expect(boy.isRich()).to.be.equal(i.return);
         });
     });
     it(`should isSummerMonth return true or false`, function () {
-        isSummerMonthBase.forEach((i) => {
+        isSummerMonthData.forEach((i) => {
             boy.birthdayMonth = i.birthdayMonth;
             expect(boy.isSummerMonth()).to.be.equal(i.return);
         });
     });
     it('should isPrettyGirlFriend return girlfriends name or undefined', function () {
-        isPrettyGirlFriendBase.forEach((i) => {
+        isPrettyGirlfriendData.forEach((i) => {
             boy.girlFriend = i.girlFriend;
             expect(boy.isPrettyGirlFriend()).to.be.equal(i.return);
         });
     });
     it('spendSomeMoney should return true or error notification', function () {
-        spendSomeMoneyBase.forEach((i) => {
+        spendSomeMoneyData.forEach((i) => {
             boy.wealth = i.wealth;
             expect(boy.spendSomeMoney(i.amountForSpending)).to.be.equal(i.return);
         });

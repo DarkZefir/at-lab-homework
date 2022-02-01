@@ -1,9 +1,9 @@
-const isRichBase = [
+const isRichData = [
     { wealth: 500_000, return: true },
     { wealth: 40_000, return: false }
 ];
 
-const isSummerMonthBase = [
+const isSummerMonthData = [
     { birthdayMonth: 'June', return: true },
     { birthdayMonth: 'July', return: true },
     { birthdayMonth: 'August', return: true },
@@ -11,14 +11,14 @@ const isSummerMonthBase = [
     { birthdayMonth: 'december', return: false },
 ];
 
-const isPrettyGirlFriendBase = [
+const isPrettyGirlfriendData = [
     { girlFriend: 'Kate', return: 'Kate'.isPretty },
     { girlFriend: '', return: undefined },
 ];
 
-const spendSomeMoneyBase = [
+const spendSomeMoneyData = [
     { wealth: 500_000, amountForSpending: 120_000, return: true },
     { wealth: 100_000, amountForSpending: 120_000, return: `Not enough money! Requested amount is 120_000, but you can't spend more then 100_000` },
 ];
 
-module.exports = { isRichBase, isSummerMonthBase, isPrettyGirlFriendBase, spendSomeMoneyBase };
+module.exports = { isRichData, isSummerMonthData, isPrettyGirlfriendData, spendSomeMoneyData };
