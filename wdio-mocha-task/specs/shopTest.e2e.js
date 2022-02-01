@@ -1,8 +1,10 @@
 const { expect } = require('chai');
+const { isBrowser } = require('mocha/lib/utils');
 
 const ShopPage = require('../pageobjects/shopPage');
 
 describe('TV in awersome shop', () => {
+
     before(async function () {
         await ShopPage.open();
         await ShopPage.openTv.click();
@@ -15,6 +17,10 @@ describe('TV in awersome shop', () => {
         await ShopPage.pushAddToCardButton.click();
         await ShopPage.pushShoppingCartButton.click();
         await ShopPage.pushViewCartButton.click();
+    });
+
+    after(async function () {
+        await browser.close();
     });
 
     it('should return that selected options', async () => {
