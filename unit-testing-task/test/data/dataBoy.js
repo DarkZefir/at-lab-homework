@@ -1,3 +1,6 @@
+const { Girl } = require('../../Girl')
+girlFriend = new Girl(true)
+
 const isRichData = [
     { wealth: 500_000, return: true },
     { wealth: 40_000, return: false }
@@ -12,8 +15,8 @@ const isSummerMonthData = [
 ];
 
 const isPrettyGirlfriendData = [
-    { girlFriend: 'Kate', return: 'Kate'.isPretty },
-    { girlFriend: '', return: undefined },
+    { girlFriend: girlFriend, return: girlFriend.isPretty },
+    { girlFriend: undefined, return: undefined },
 ];
 
 const spendSomeMoneyData = [

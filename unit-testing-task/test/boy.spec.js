@@ -1,4 +1,5 @@
 const { Boy } = require('../Boy.js');
+const { Girl } = require('../Girl')
 const { isRichData, isSummerMonthData, isPrettyGirlfriendData, spendSomeMoneyData } = require('./data/dataBoy');
 
 const { expect } = require('chai');
@@ -34,10 +35,9 @@ describe('Boy isRich, isSummerMonth, spendSomeMoney scenarios', function () {
 
 describe('Boy mood scenarios', function () {
     const boy = new Boy();
-
     it('should return mood EXCELLENT', function () {
         boy.wealth = 500_000;
-        boy.girlFriend = 'Kate';
+        boy.girlFriend = new Girl(true);
         boy.birthdayMonth = 'june'
         expect(boy.getMood()).to.be.equal('EXCELLENT');
     });
@@ -47,7 +47,7 @@ describe('Boy mood scenarios', function () {
     });
     it('should should return mood GOOD', function () {
         boy.wealth = 500_000;
-        boy.girlFriend = 'Kate';
+        boy.girlFriend = new Girl(true);
         expect(boy.getMood()).to.be.equal('GOOD');
     });
     it('should should return mood BAD', function () {
@@ -56,36 +56,19 @@ describe('Boy mood scenarios', function () {
     });
 });
 
-describe('Boy getters', function () {
+describe('Boy getters/setters', function () {
     const boy = new Boy();
 
     it('should birthdayMonth return MAY', function () {
-        boy._birthdayMonth = 'MAY';
+        boy.birthdayMonth = 'MAY';
         expect(boy.birthdayMonth).to.be.equal('MAY');
     });
     it('should wealth return 150_000', function () {
-        boy._wealth = 150_000;
+        boy.wealth = 150_000;
         expect(boy.wealth).to.be.equal(150_000);
     });
-    it('should girlfriend return Kate', function () {
-        boy._girlFriend = 'Kate';
+    it('should girlfriend return true', function () {
+        boy.girlFriend = new Girl(true);
         expect(boy.girlFriend).to.be.equal('Kate');
-    });
-});
-
-describe('Boy setters', function () {
-    const boy = new Boy();
-
-    it('should set birthdayMonth December', function () {
-        boy.birthdayMonth = 'December';
-        expect(boy._birthdayMonth).to.be.equal('December');
-    });
-    it('should set wealth 120_000', function () {
-        boy.wealth = 120_000;
-        expect(boy._wealth).to.be.equal(120_000);
-    });
-    it('should set girlfriend Mary', function () {
-        boy.girlFriend = 'Mary';
-        expect(boy._girlFriend).to.be.equal('Mary');
     });
 });
