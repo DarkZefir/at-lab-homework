@@ -56,8 +56,12 @@ class ShopPage {
         return $("//input[@id='button-coupon']");
     }
 
-    get totalSum() {
-        return $("//div[@class='col-sm-4 col-sm-offset-8']//tr[last()]/td[last()]");
+    get subTotal() {
+        return $("//div[@class='col-sm-4 col-sm-offset-8']//tr[1]/td[last()]");
+    }
+
+    get luckyCoupon() {
+        return $("//div[@class='col-sm-4 col-sm-offset-8']//tr[2]/td[last()]");
     }
 
     get checkNotification() {

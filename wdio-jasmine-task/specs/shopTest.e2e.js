@@ -1,6 +1,5 @@
 const ShopPage = require('../pageobjects/shopPage');
 const LoginPage = require('../pageobjects/login.page');
-const { isBrowser } = require('mocha/lib/utils');
 
 describe('Phone in awersome shop', () => {
     beforeAll(async function () {
@@ -23,8 +22,12 @@ describe('Phone in awersome shop', () => {
     })
 
     it('should return sum with coupon', async () => {
-        const textOptions = await ShopPage.totalSum.getText();
-        expect(textOptions).toBe('$721.14');
+        const subTotalText = await ShopPage.subTotal.getText();
+        const subTotalNumber = subTotalText.replace('$', '');
+        const realCoupon = (subTotalNumber * 15) / 100;
+        const couponText = await ShopPage.luckyCoupon.getText();
+        const couponFinal = Number(couponText.replace('$', ''));
+        expect(couponFinal).toBe(realCoupon);
     });
 
     it('should contain message Sucsess', async () => {
