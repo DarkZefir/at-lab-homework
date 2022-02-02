@@ -44,8 +44,12 @@ class ShopPage {
         return $("//div[@class='table-responsive']//tbody//td[@class='text-left'][1]/*");
     }
 
-    get totalSum() {
-        return $("//div[@class='col-sm-4 col-sm-offset-8']//td[contains(text(),'615')]");
+    get subTotal() {
+        return $("//div[@class='col-sm-4 col-sm-offset-8']//tr[1]/td[last()]");
+    }
+
+    get vat() {
+        return $("//div[@class='col-sm-4 col-sm-offset-8']//tr[2]/td[last()]")
     }
 
     async selectQuantity() {

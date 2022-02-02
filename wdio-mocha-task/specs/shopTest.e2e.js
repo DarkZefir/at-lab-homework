@@ -1,5 +1,4 @@
 const { expect } = require('chai');
-const { isBrowser } = require('mocha/lib/utils');
 
 const ShopPage = require('../pageobjects/shopPage');
 
@@ -19,10 +18,6 @@ describe('TV in awersome shop', () => {
         await ShopPage.pushViewCartButton.click();
     });
 
-    after(async function () {
-        await browser.close();
-    });
-
     it('should return that selected options', async () => {
         const options = 'Apple Cinema 30' && 'Medium' && 'Checkbox 2' && 'Checkbox 4' & 'Green';
         const textOptions = await ShopPage.summaryOptions.getText();
@@ -30,7 +25,12 @@ describe('TV in awersome shop', () => {
     });
 
     it('should return that VAT 20% is calculated correctly', async () => {
-        const total = await ShopPage.totalSum.getText();
-        expect(total).to.be.include('615.6');
+        const subTotalText = await ShopPage.subTotal.getText();
+        const subTotalNumber = subTotalText.replace('$', '');
+        const vatText = await ShopPage.vat.getText();
+        const vatString = vatText.replace('$', '');
+        const vatNumber = Number(vatString);
+        const finalVat = (subTotalNumber * 20) / 100;
+        expect(vatNumber).to.be.equal(finalVat);
     });
 });
