@@ -1,4 +1,4 @@
-const shopModel = require("./shopModel")
+const ShopModel = require("./shopModel")
 
 class Factory {
     static getDefaultCalc() {
@@ -8,7 +8,7 @@ class Factory {
             checkboxTwo: '9',
             checkboxFour: '11',
         };
-        return new shopModel(defaultAvParameters);
+        return new ShopModel(defaultAvParameters);
     };
 };
 

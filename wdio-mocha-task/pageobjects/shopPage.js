@@ -1,6 +1,6 @@
-const factory = require('./factory');
+const Factory = require('./factory');
 
-const itemsOptions = factory.getDefaultCalc();
+const itemsOptions = Factory.getDefaultCalc();
 class ShopPage {
 
     constructor() {
