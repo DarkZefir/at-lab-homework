@@ -1,5 +1,9 @@
 class ShopPage {
 
+    constructor() {
+        this.defaultWaitTimeout = 4000;
+    }
+
     get openDroplistIcon() {
         return $("//i[@class='fa fa-th-large']");
     }
@@ -74,15 +78,15 @@ class ShopPage {
 
     async pasteCoupon() {
         const coupon = 'LuckyUser';
-        await this.couponText.waitForClickable(4000);
+        await this.couponText.waitForClickable(defaultWaitTimeout);
         await this.couponText.setValue(coupon);
-        await this.pushApplyCouponButton.waitForClickable(4000);
+        await this.pushApplyCouponButton.waitForClickable(defaultWaitTimeout);
         await this.pushApplyCouponButton.click();
     }
 
     async shoppingCartAndView() {
         await this.shoppingCartButton.click();
-        await this.viewCartButton.waitForClickable(4000);
+        await this.viewCartButton.waitForClickable(defaultWaitTimeout);
         await this.viewCartButton.click();
     }
 
@@ -93,9 +97,9 @@ class ShopPage {
     }
 
     async selectQuantityAndAddToCart(number) {
-        await this.chooseQuantity.waitForClickable(4000);
+        await this.chooseQuantity.waitForClickable(defaultWaitTimeout);
         await this.chooseQuantity.setValue(number);
-        await this.clickAddToCartButton.waitForClickable(4000);
+        await this.clickAddToCartButton.waitForClickable(defaultWaitTimeout);
         await this.clickAddToCartButton.click();
     }
 
