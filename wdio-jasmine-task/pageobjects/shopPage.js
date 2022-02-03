@@ -77,7 +77,7 @@ class ShopPage {
     }
 
     async pasteCoupon() {
-        const coupon = 'LuckyUser';
+        const coupon = "LuckyUser";
         await this.couponText.waitForClickable(defaultWaitTimeout);
         await this.couponText.setValue(coupon);
         await this.pushApplyCouponButton.waitForClickable(defaultWaitTimeout);
@@ -104,7 +104,7 @@ class ShopPage {
     }
 
     open() {
-        return browser.url(`https://awesome-shop.ru/`);
+        return browser.url("https://awesome-shop.ru/");
     }
 }
 

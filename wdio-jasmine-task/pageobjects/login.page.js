@@ -1,4 +1,4 @@
-const Factory = require('../pageobjects/factory');
+const Factory = require("../pageobjects/factory");
 
 const dropdownLists = Factory.getDefaultCalc();
 
@@ -74,7 +74,7 @@ class LoginPage {
     }
 
     async textInStepFour() {
-        const comment = 'This comment should write some text for this place. Merry Christmas';
+        const comment = "This comment should write some text for this place. Merry Christmas";
         await this.textAreaStepFour.keys(comment);
         await this.continueStepFourButton.waitForClickable(defaultWaitTimeout)
         await this.continueStepFourButton.click();
@@ -83,19 +83,19 @@ class LoginPage {
     async selectRegion() {
         await this.openDropdownRegion.click();
         await this.openDropdownRegion.waitForClickable(defaultWaitTimeout);
-        await this.openDropdownRegion.keys('mahil');
-        await this.openDropdownRegion.keys('Enter');
+        await this.openDropdownRegion.keys("mahil");
+        await this.openDropdownRegion.keys("Enter");
     }
 
     async selectCountry() {
         await this.openDropdownCountry.click();
         await this.openDropdownCountry.waitForClickable(defaultWaitTimeout);
-        await this.openDropdownCountry.keys('bela');
-        await this.openDropdownCountry.keys('Enter');
+        await this.openDropdownCountry.keys("bela");
+        await this.openDropdownCountry.keys("Enter");
     }
 
     async choosePlaceholderStepTwo(text, text2) {
-        const dropdownLocator = this.stepTwoPlaceholder.replace('TEXT_PLACEHOLDER', text);
+        const dropdownLocator = this.stepTwoPlaceholder.replace("TEXT_PLACEHOLDER", text);
         const dropdownOption = $(dropdownLocator);
         await dropdownOption.waitForClickable(defaultWaitTimeout);
         await dropdownOption.click();
@@ -103,19 +103,19 @@ class LoginPage {
     }
 
     async pasteValuesInFirstName() {
-        await this.choosePlaceholderStepTwo(dropdownLists.firstName, 'Test');
+        await this.choosePlaceholderStepTwo(dropdownLists.firstName, "Test");
     }
 
     async pasteValuesInLastName() {
-        await this.choosePlaceholderStepTwo(dropdownLists.lastName, 'Testov');
+        await this.choosePlaceholderStepTwo(dropdownLists.lastName, "Testov");
     }
 
     async pasteValuesInAdress() {
-        await this.choosePlaceholderStepTwo(dropdownLists.adress, '21Petrovskaya');
+        await this.choosePlaceholderStepTwo(dropdownLists.adress, "21Petrovskaya");
     }
 
     async pasteValuesInCity() {
-        await this.choosePlaceholderStepTwo(dropdownLists.city, 'Minsk');
+        await this.choosePlaceholderStepTwo(dropdownLists.city, "Minsk");
     }
 }
 
