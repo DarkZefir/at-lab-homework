@@ -1,11 +1,12 @@
-const Factory = require('./factory');
+const factory = require('./factory');
 
-const itemsOptions = Factory.getDefaultCalc();
+const itemsOptions = factory.getDefaultCalc();
 class ShopPage {
 
     constructor() {
         this.radio = "//input[@name ='option[218]'][@value='TEXT_PLACEHOLDER']";
         this.checkbox = "//input[@name ='option[223][]'][@value='TEXT_PLACEHOLDER']";
+        this.defaultWaitTimeout = 4000;
     }
 
     get openTv() {
@@ -53,13 +54,13 @@ class ShopPage {
     }
 
     async selectQuantity() {
-        await this.chooseQuantity.waitForClickable(4000);
+        await this.chooseQuantity.waitForClickable(this.defaultWaitTimeout);
         await this.chooseQuantity.click();
         await this.chooseQuantity.keys('ArrowUp');
     }
 
     async openDropdownColor() {
-        await this.openDropdownList.waitForClickable(4000);
+        await this.openDropdownList.waitForClickable(this.defaultWaitTimeout);
         await this.openDropdownList.click();
         await this.openDropdownList.keys('ArrowDown');
         await this.openDropdownList.keys('ArrowDown');
@@ -70,14 +71,14 @@ class ShopPage {
     async chooseParameterRadio(text1) {
         const parameterItem = this.radio.replace('TEXT_PLACEHOLDER', text1);
         const parameterOption = $(parameterItem);
-        await parameterOption.waitForClickable(4000);
+        await parameterOption.waitForClickable(this.defaultWaitTimeout);
         await parameterOption.click();
     }
 
     async chooseParameterCheckbox(text2) {
         const parameterItem = this.checkbox.replace('TEXT_PLACEHOLDER', text2);
         const parameterOption = $(parameterItem);
-        await parameterOption.waitForClickable(4000);
+        await parameterOption.waitForClickable(this.defaultWaitTimeout);
         await parameterOption.click();
     }
 
