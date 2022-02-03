@@ -1,4 +1,4 @@
-const Factory = require('./factory');
+const Factory = require("./factory");
 
 const itemsOptions = Factory.getDefaultCalc();
 class ShopPage {
@@ -56,27 +56,27 @@ class ShopPage {
     async selectQuantity() {
         await this.chooseQuantity.waitForClickable(this.defaultWaitTimeout);
         await this.chooseQuantity.click();
-        await this.chooseQuantity.keys('ArrowUp');
+        await this.chooseQuantity.keys("ArrowUp");
     }
 
     async openDropdownColor() {
         await this.openDropdownList.waitForClickable(this.defaultWaitTimeout);
         await this.openDropdownList.click();
-        await this.openDropdownList.keys('ArrowDown');
-        await this.openDropdownList.keys('ArrowDown');
-        await this.openDropdownList.keys('ArrowDown');
-        await this.openDropdownList.keys('Enter');
+        await this.openDropdownList.keys("ArrowDown");
+        await this.openDropdownList.keys("ArrowDown");
+        await this.openDropdownList.keys("ArrowDown");
+        await this.openDropdownList.keys("Enter");
     }
 
     async chooseParameterRadio(text1) {
-        const parameterItem = this.radio.replace('TEXT_PLACEHOLDER', text1);
+        const parameterItem = this.radio.replace("TEXT_PLACEHOLDER", text1);
         const parameterOption = $(parameterItem);
         await parameterOption.waitForClickable(this.defaultWaitTimeout);
         await parameterOption.click();
     }
 
     async chooseParameterCheckbox(text2) {
-        const parameterItem = this.checkbox.replace('TEXT_PLACEHOLDER', text2);
+        const parameterItem = this.checkbox.replace("TEXT_PLACEHOLDER", text2);
         const parameterOption = $(parameterItem);
         await parameterOption.waitForClickable(this.defaultWaitTimeout);
         await parameterOption.click();
@@ -92,21 +92,21 @@ class ShopPage {
     }
 
     open() {
-        return browser.url(`https://awesome-shop.ru/`);
+        return browser.url("https://awesome-shop.ru/");
     }
 
     async writeTextInTextPlace() {
         const textForTextPlace = "Simple testing words";
         await this.chooseTextOption.click();
         await this.chooseTextOption.keys(textForTextPlace);
-        await this.chooseTextOption.keys('Enter');
+        await this.chooseTextOption.keys("Enter");
     }
 
     async writeTextInTextArea() {
         const textForTextPlace = "I tell you most important secret about JavaScript, and this secret is ...";
         await this.chooseTextArea.click();
         await this.chooseTextArea.keys(textForTextPlace);
-        await this.chooseTextArea.keys('Enter');
+        await this.chooseTextArea.keys("Enter");
     }
 
 
