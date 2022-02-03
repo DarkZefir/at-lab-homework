@@ -1,6 +1,6 @@
-const factory = require('../pageobjects/factory');
+const Factory = require('../pageobjects/factory');
 
-const dropdownLists = factory.getDefaultCalc();
+const dropdownLists = Factory.getDefaultCalc();
 
 class LoginPage {
 

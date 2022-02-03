@@ -1,4 +1,4 @@
-const loginModel = require("./buissnesModel")
+const LoginModel = require("./buissnesModel")
 
 class Factory {
     static getDefaultCalc() {
@@ -8,7 +8,7 @@ class Factory {
             adress: 'input-payment-address-1',
             city: 'input-payment-city'
         };
-        return new loginModel(defaultAvParameters);
+        return new LoginModel(defaultAvParameters);
     };
 };
 
