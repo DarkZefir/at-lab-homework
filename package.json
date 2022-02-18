@@ -6,7 +6,8 @@
 	"scripts": {
 		"test:unit-testing": "mocha",
 		"test:wdio-jasmine-task": "mocha",
-		"test:wdio-mocha-task": "mocha"
+		"test:wdio-mocha-task": "mocha",
+		"cypress": "npx cypress open"
 	},
 	"repository": {
 		"type": "git",
